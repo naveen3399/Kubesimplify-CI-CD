@@ -1,7 +1,7 @@
 FROM python:3.9-alpine
-WORKDIR /<github-repo>
+WORKDIR /usr/bin/
 ENV  MSG="Hello World!"
-ENV  MSG="Hello World from kubesimplify"
+ENV  MSG="Hello World from kubesimplify123"
 COPY . .
 RUN pip3 install -r requirement.txt
 EXPOSE 5000
