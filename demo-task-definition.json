@@ -9,7 +9,7 @@
         "logDriver": "awslogs",
         "secretOptions": null,
         "options": {
-          "awslogs-group": "/ecs/demo-task-definition",
+          "awslogs-group": "/ecs/demo-taskdefinition",
           "awslogs-region": "ap-south-1",
           "awslogs-stream-prefix": "ecs"
         }
@@ -61,11 +61,10 @@
   "memory": "1024",
   "taskRoleArn": "arn:aws:iam::496776144465:role/ecsTaskExecutionRole",
   "compatibilities": [
-    "EC2",
-    "FARGATE"
+    "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:ap-south-1:496776144465:task-definition/demo-task-definition:16",
-  "family": "demo-task-definition",
+  "taskDefinitionArn": "arn:aws:ecs:ap-south-1:496776144465:task-definition/demo-taskdefinition:2",
+  "family": "demo-taskdefinition",
   "requiresAttributes": [
     {
       "targetId": null,
@@ -118,15 +117,12 @@
   ],
   "pidMode": null,
   "requiresCompatibilities": [
-    "FARGATE"
+    "EC2"
   ],
   "networkMode": "awsvpc",
-  "runtimePlatform": {
-    "operatingSystemFamily": "LINUX",
-    "cpuArchitecture": null
-  },
-  "cpu": "512",
-  "revision": 16,
+  "runtimePlatform": null,
+  "cpu": "1024",
+  "revision": 2,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
