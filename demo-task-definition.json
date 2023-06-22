@@ -9,7 +9,7 @@
         "logDriver": "awslogs",
         "secretOptions": null,
         "options": {
-          "awslogs-group": "/ecs/demo-taskdefinition",
+          "awslogs-group": "/ecs/demo-task-definition",
           "awslogs-region": "ap-south-1",
           "awslogs-stream-prefix": "ecs"
         }
@@ -17,7 +17,7 @@
       "entryPoint": [],
       "portMappings": [
         {
-          "hostPort": 5000,
+          "hostPort": 0,
           "protocol": "tcp",
           "containerPort": 5000
         }
@@ -61,10 +61,11 @@
   "memory": "1024",
   "taskRoleArn": "arn:aws:iam::496776144465:role/ecsTaskExecutionRole",
   "compatibilities": [
+    "EXTERNAL",
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:ap-south-1:496776144465:task-definition/demo-taskdefinition:2",
-  "family": "demo-taskdefinition",
+  "taskDefinitionArn": "arn:aws:ecs:ap-south-1:496776144465:task-definition/demo-task-definition:58",
+  "family": "demo-task-definition",
   "requiresAttributes": [
     {
       "targetId": null,
@@ -101,28 +102,16 @@
       "targetType": null,
       "value": null,
       "name": "ecs.capability.execution-role-ecr-pull"
-    },
-    {
-      "targetId": null,
-      "targetType": null,
-      "value": null,
-      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
-    },
-    {
-      "targetId": null,
-      "targetType": null,
-      "value": null,
-      "name": "ecs.capability.task-eni"
     }
   ],
   "pidMode": null,
   "requiresCompatibilities": [
     "EC2"
   ],
-  "networkMode": "awsvpc",
+  "networkMode": "bridge",
   "runtimePlatform": null,
   "cpu": "1024",
-  "revision": 2,
+  "revision": 58,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
