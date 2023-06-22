@@ -2,6 +2,7 @@ FROM python:3.9-alpine
 WORKDIR /usr/bin/
 ENV  MSG="Hello World!"
 ENV  MSG="Hello World from kubesimplify1232"
+ENV MSG="Hellow Naveen"
 COPY . .
 RUN pip3 install -r requirement.txt
 EXPOSE 5000
