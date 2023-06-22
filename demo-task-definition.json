@@ -9,7 +9,7 @@
         "logDriver": "awslogs",
         "secretOptions": null,
         "options": {
-          "awslogs-group": "/ecs/demo-task-definition",
+          "awslogs-group": "/ecs/demo-task",
           "awslogs-region": "ap-south-1",
           "awslogs-stream-prefix": "ecs"
         }
@@ -17,7 +17,7 @@
       "entryPoint": [],
       "portMappings": [
         {
-          "hostPort": 0,
+          "hostPort": 5000,
           "protocol": "tcp",
           "containerPort": 5000
         }
@@ -34,7 +34,7 @@
       "secrets": null,
       "dockerSecurityOptions": null,
       "memory": null,
-      "memoryReservation": null,
+      "memoryReservation": 300,
       "volumesFrom": [],
       "stopTimeout": null,
       "image": "496776144465.dkr.ecr.ap-south-1.amazonaws.com/demo-repo",
@@ -61,11 +61,11 @@
   "memory": "1024",
   "taskRoleArn": "arn:aws:iam::496776144465:role/ecsTaskExecutionRole",
   "compatibilities": [
-    "EXTERNAL",
-    "EC2"
+    "EC2",
+    "FARGATE"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:ap-south-1:496776144465:task-definition/demo-task-definition:58",
-  "family": "demo-task-definition",
+  "taskDefinitionArn": "arn:aws:ecs:ap-south-1:496776144465:task-definition/demo-task:1",
+  "family": "demo-task",
   "requiresAttributes": [
     {
       "targetId": null,
@@ -95,6 +95,12 @@
       "targetId": null,
       "targetType": null,
       "value": null,
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
       "name": "com.amazonaws.ecs.capability.task-iam-role"
     },
     {
@@ -102,16 +108,31 @@
       "targetType": null,
       "value": null,
       "name": "ecs.capability.execution-role-ecr-pull"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "ecs.capability.task-eni"
     }
   ],
   "pidMode": null,
   "requiresCompatibilities": [
-    "EC2"
+    "FARGATE"
   ],
-  "networkMode": "bridge",
-  "runtimePlatform": null,
-  "cpu": "1024",
-  "revision": 58,
+  "networkMode": "awsvpc",
+  "runtimePlatform": {
+    "operatingSystemFamily": "LINUX",
+    "cpuArchitecture": null
+  },
+  "cpu": "256",
+  "revision": 1,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
