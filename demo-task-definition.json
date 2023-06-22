@@ -9,7 +9,7 @@
         "logDriver": "awslogs",
         "secretOptions": null,
         "options": {
-          "awslogs-group": "/ecs/demo-task",
+          "awslogs-group": "/ecs/task-demo",
           "awslogs-region": "ap-south-1",
           "awslogs-stream-prefix": "ecs"
         }
@@ -64,8 +64,8 @@
     "EC2",
     "FARGATE"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:ap-south-1:496776144465:task-definition/demo-task:1",
-  "family": "demo-task",
+  "taskDefinitionArn": "arn:aws:ecs:ap-south-1:496776144465:task-definition/task-demo:1",
+  "family": "task-demo",
   "requiresAttributes": [
     {
       "targetId": null,
@@ -131,7 +131,7 @@
     "operatingSystemFamily": "LINUX",
     "cpuArchitecture": null
   },
-  "cpu": "256",
+  "cpu": "512",
   "revision": 1,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
